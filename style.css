@@ -7,5 +7,8 @@
 	min-height:100vh;
 	width:100%;
 	background-image:linear-
-	gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url
+	gradient (rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/blanco.png)
+	background-position:center;
+	background-aize: cover;
+	position: relative;
 }
