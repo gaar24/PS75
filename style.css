@@ -1,3 +1,5 @@
+/*------- Introduction ------ */
+
 *{
 	margin: 0;
 	padding: 0;
@@ -81,35 +83,42 @@ nav{
 	padding-top:100px;
 }
 h1{
-	font-size:36px;
+	font-size:30px;
 	font-weight:600;
 	color: gray;
 }
+
 .row{
 	margin-top:5%;
 	display:flex;
 	justify-content:space-between;
-	color:grey;
 }
 
-course-col{
-	display:inline-block;
+.course-col{
+	display: inline-block;
 	text-decoration: none;
 	color: gray;
-	border:2px solid gray;
-	padding:20px 12px;
-	font-size:13px;
-	bacground:transparent;
-	position:relative;
-	cursor:pointer;
-	transition:0.5s;
+	border: 2px solid gray;
+	flex-basis: 31%;
+	background: trasnparemt;
+	border-radius: 10px;
+	margin-bottom: 5%;
+	padding: 20px 12px;
+	box-sizing: border-box;
+	transition: 0.5s;
+}
+
+h3{
+	text-align: center;
+	font-weight: 600;
+	margin: 10px 0;
+
 }
 
 .course-col:hover{
 	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 	color: #b8a07e;
 }
-
 
 
 
