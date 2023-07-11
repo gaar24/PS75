@@ -157,7 +157,22 @@ h3{
 	padding: 15px 0 25px;
 }
 
+/*-------------- Week 1 --------------------*/
 
+.lolo {
+	width:70%; 
+	color: white;
+	position: absolute;
+	top:30%;
+	left: 30%;
+	transform:translate(-50%,-50%);
+	text-align: center;
+}
+
+.lolo h1{
+	font-size: 60px;
+	color: whitesmoke;
+}
 
 
 
