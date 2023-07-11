@@ -46,7 +46,7 @@ nav{
 	background:white;
 	display: block;
 	margin: auto ;
-	transition:0.3s;
+	transition:0.1s;
 }
 .nav-links ul li:hover::after{
 	width:100%;
@@ -61,13 +61,10 @@ nav{
 	text-align: center;
 }
 
-
 .text-box h1{
 	font-size: 60px;
 	color: whitesmoke;
 }
-
-
 
 
 /*------- course ------ */
@@ -114,9 +111,6 @@ h3{
 	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
 	color: #b8a07e;
 }
-
-
-
 
 
 /*------------- About me ------------------- */
