@@ -183,4 +183,30 @@ h3{
 	color: whitesmoke;
 }
 
+.course{
+	width: 80%;
+	margin:auto ;
+	text-align: center;
+	padding-top:100px;
+}
+
+.row{
+	margin-top:5%;
+	display:flex;
+	justify-content:space-between;
+}
+
+.about-col{
+	
+}
+
+h1{
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+p{
+	font-size: 20px;
+	color: gray;
+}
 
