@@ -35,49 +35,84 @@
 <div class= "about-col">
 
 
-<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 3%; "> Assignment #1 </h1>
-<p> For this weeks assignment we had to use a sensor to measure a physical quantity with a microcontroller, and callibrate the sensor. Then, we had to do the same witha capacitive sensor fabricated by ourselves using copper tape, aluminum foil, velostat, etc.</p>
+<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> Assignment </h1>
+<p> For this weeks assignment we had to use a sensor to measure a physical quiantity with your microcontroller. Callibrate your sensor (describe the range between its min and max values, and wether/ how you can control this range). Them, show data in the form of a table or graph. We had to do the same as the first assignment, but this time with a capacitive sensor you have fabricated yourself using copper tape, aluminum foil..etc. </p>
 
-<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 2%; "> "Temperature" </h1>
-
-<h1> Materials Used </h1>
-<p> Prusa Slicer Software, Fusion 360, 3D Printer </p>
-
+<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> "Assignment #1 Temperature Sensor " </h1>
 
 <h1> Introduction </h1>
+<p> The materials I used were: Arduino Board, Thermistor, Wires, Resistor, and Thermometer. Also, wanted to add that the type of thermistor I used was an NTC (Negative Temperature Coefficient) which basically means that resistance decreases as temperature begins to rise. </p>
 
-<p> I chose temperature as my physical quantity that wanted to measure, and used  </p>
 
 <h1> The process </h1>
-
-<P> </P>
+<P>  I started by following this website that provided me with an explanation on how to hook up my thermistor <a href="https://www.circuitbasics.com/arduino-thermistor-temperature-sensor-tutorial/  "> here</a> which basically means that I had to connect at wire to 5V, another to GND and the other to A0. I aslo used a resistor that had a resitance of 10K Ohms as my thermistro had a resistance of 10K Ohms. I realized there are many possible ways to hook up the thermistor, and decided to implement aligator clips so that it could be easily sumerged in water when testing at the different temperatures. I will providee below images of how my curicut ended up looking. </P>
 
 <img src="./one.png">
+
+<p> Once I had this cirucit done, I proceed to do the code which is a version of the one from the website but a bit modified so that its bale to display both the thermistor resistance and temeparture values in the serial motor. </p>
+
+<h1> Code </h1>
+<pre>
+int ThermistorPin = 0;
+int Vo;
+float R1 = 10000;
+float logR2, R2, T;
+float c1 = 1.009249522e-03, c2 = 2.378405444e-04, c3 = 2.019202697e-07;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Vo = analogRead(ThermistorPin);
+  R2 = R1 * (1023.0 / (float)Vo - 1.0);
+  logR2 = log(R2);
+  T = (1.0 / (c1 + c2 * logR2 + c3 * logR2 * logR2 * logR2));
+  T = T - 273.15;
+
+  Serial.print("Resistance: ");
+  Serial.print(R2);
+  Serial.print(" Ohms\n");
+
+  Serial.print("Temperature: ");
+  Serial.print(T);
+  Serial.println(" Celsius\n");
+
+  delay(500);
+}
+
+</pre>
+
+
+<h1> Testing </h1>
+<p> To test the functioning of my temperature sensor, I used different temperatures of water to callibrate my thermistor. For that, I started by preparing cups with water at various temperatures at 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 degrees celcius. Then, submerged the thermistor into the different cups and record the thermistor reading sin the form of resistance (ohms). It took me a lot of tiume to obtain the datas as wanted to ensure that thr measurement were accurated. 
+
+
+
+  </p>
+
 <img src="./two.png">
-<img src="./three.png">
+
+
+<h1> Results  </h1>
+
+<p> After a solid hour testing this is what I got. This first table its juts shwoing 
+
+
 <img src="./four.png">
+
+For a better visual representation, I plotted the graph where the x axis is resistance ( ohms) and the y axis the respective temperatures of water. This graphs shows the correlation analysis between the resistance of a thermistor in relation to water temperature. </p>
+
+
 <img src="./five.png">
-<img src="./six.png">
-
-<h1> Using Prusa Slicer</h1>
-<img src="./seven.png">
-
-<h1> 3D Printer </h1>
-<img src="./nine.png">
 
 
-<h1> Final Product </h1>
 
-<img src="./diez.png">
-<img src="./once.png">
+<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> "Assignment #2 Capacitive Sensor  " </h1>
+
+<p> I decided to make a touch sensor using a Capacitive Sensor. </p>
 
 
-<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 2%;" > Assignment #2 </h1>
-
-<h1> Photogrammetry</h1>
-
-<img src="./lotion.png">
-<a href="https://poly.cam/capture/8C09A478-1A16-4E94-AB00-773D80D67A43"> This is the link to my scan </a>
 
 
 </div>
