@@ -35,10 +35,10 @@
 <div class= "about-col">
 
 
-<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> Assignment </h1>
-<p> For this weeks assignment we had to use a sensor to measure a physical quiantity with your microcontroller. Callibrate your sensor (describe the range between its min and max values, and wether/ how you can control this range). Them, show data in the form of a table or graph. We had to do the same as the first assignment, but this time with a capacitive sensor you have fabricated yourself using copper tape, aluminum foil..etc. </p>
+<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 208%; height: 2%; "> Assignment </h1>
+<p> For this weeks assignment we had to use a sensor to measure a physical quantity with a microcontroller. Then, callibrate the sensor (describe the range between its min and max values, and wether/ how you can control this range). Lastly,  show data in the form of a table or graph. We had to do the same as the first assignment, but this time with a capacitive sensor you have fabricated yourself using copper tape, aluminum foil..etc. </p>
 
-<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> "Assignment #1 Temperature Sensor " </h1>
+<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 208%; height: 2%; "> "Assignment #1 Temperature Sensor " </h1>
 
 <h1> Introduction </h1>
 <p> The materials I used were: Arduino Board, Thermistor, Wires, Resistor, and Thermometer. Also, wanted to add that the type of thermistor I used was an NTC (Negative Temperature Coefficient) which basically means that resistance decreases as temperature begins to rise. </p>
@@ -52,7 +52,7 @@
 <p> Once I had this cirucit done, I proceed to do the code which is a version of the one from the website but a bit modified so that its bale to display both the thermistor resistance and temeparture values in the serial motor. </p>
 
 <h1> Code </h1>
-<pre>
+<pre >
 int ThermistorPin = 0;
 int Vo;
 float R1 = 10000;
@@ -96,12 +96,12 @@ void loop() {
 
 <h1> Results  </h1>
 
-<p> After a solid hour testing this is what I got. This first table its juts showing </p>
+<p> After a solid hour testing this is what I got. This first table its juts showcasing the correlation analysis between the resistance of a thermistor in relation to water temperature. The thermisistor  have a negative temperature coefficient that leads to changes in resistance with variation to temperature.   </p>
 
 
 <img src="./four.png">
 
-<p> For a better visual representation, I plotted the graph where the x axis is resistance ( ohms) and the y axis the respective temperatures of water. This graphs shows the correlation analysis between the resistance of a thermistor in relation to water temperature. </p>
+<p> For a better visual representation, I plotted the graph where the x axis is resistance ( ohms) and the y axis the respective temperatures of water. This graphs shows the correlation analysis between the resistance of a thermistor in relation to water temperature, and as it can be appreciate that as temperature increases from 0 to 100, then thermistor resistance decreases. It starts with 10000, and goes all the way to a value of 1409Ω. This is due to the fact that thermistors material have a negative temperature coefficent where temperaturei inncreases, charger carriers gain more energy that leads to higher mobility, but this results in higher availbility fo this chargees that ends up having a low resistance.</p>
 
 
 <img src="./five.png">
