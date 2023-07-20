@@ -35,10 +35,164 @@
 <div class= "about-col">
 
 
-<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 15%; "> Assignment </h1>
+<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 2%; "> Assignment </h1>
 <p> For this weeks assignment we had to use an output device that I havent used and write a microcontroller program that integrates at least one input device and one output device. Then, use an oscilliscioe to discover the time domain at which the output device is operating.  </p>
 
+<h1> Materials Used </h1>
+<p> USB, Potentiometer ( capable of regulating the intensity of the current that circuates through the circuit9, pushbutton, buzzer, breadboard, wires, arduino program </p>
 
+<h1> Music Player </h1>
+<p> I decided to build a program capable of playing " Happy Birthday" throughout the buzzer. For that, I started by playing with other output devices learned in class, such as the RGB LEDs, LED strip. Then,  I started to make my music player that when you press the pushbutton, Happy Birthday song will start playing and it can be regulated with a potentiometer. Before this, I actually had to learn how to use the buzzerm and it wasnt that hard and so due to the fact that the buzzer would not stop making noises, I decided to add a pushbutton. To do this, I put the potentiometer in the center of the breadboard so that I could connect pin 12 to the middle lead and the other two leads to the speaker. Next, I add a pusbutton. I coonected one lead with pin 3 and the other to GND. Finally, I connected one lead to GND of the arduino board. I then made sure that all the connections were good to go abd connected the hardware to the software. 
+For the code, I decided to do it by myself and basically started by declaring variables for the musical notes of my song. Before starting I added "int" which basically means integer and is the data type for number storage. Then, for my first note which was g4, i added its correpsonding frequency that took from a table, in this case, 392. I then did the same with all the notes. Afterwards, I declared the variables for duration measured in milliseconds, and "void setup". Lastly, I added the whole code of my song into the void loop space. 
+
+<img src="./arduino.png">
+
+<h1> Performance </h1>
+<p> I would definetely say that the electronci output ended up being succesful. It ended up having 8 measures, 5 different pitches, and 3 different note durations. Here you will find my Arduino Performance <a href="https://drive.google.com/file/d/1ldNuoTcOc5uuXRxoRjaprVY5fS3kSSUs/view?t=6s"> here </a> </p>
+
+<p> Also, this is the code I programmed:</p>
+<p> <pre>
+  
+
+int pin= 12;
+int buttonpin = 3;
+
+int g4=392;
+int a4=440;
+int c5= 523;
+int d5=587;
+int g5=784;
+int e5=659;
+int f5=699;
+int b4=494;
+
+int beat16=150;
+int beat8=2*beat16;
+int beatd8= 3*beat16;
+int beat4=4*beat16;
+int beatd4=6*beat16;
+int beat2=8*beat16;
+int beatd2=12*beat16;
+int beat1=16*beat16;
+
+void setup(){
+
+
+
+pinMode (pin, OUTPUT);
+pinMode (buttonpin, INPUT_PULLUP);
+}
+
+void loop (){
+
+
+if(digitalRead(buttonpin)==LOW)
+{
+  for(int i=0; i<3; i++)
+  {
+    tone (pin,g4);
+    delay(beatd8);
+    noTone(pin);
+
+    tone(pin,g4);
+    delay(beat16);
+    noTone(pin);
+
+    tone(pin,a4);
+    delay(beat4);
+    noTone(pin);
+
+  tone(pin,g4);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,c5);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,b4);
+  delay(beat2);
+  noTone(pin);
+
+  tone(pin,g4);
+  delay(beatd8);
+  noTone(pin);
+
+  tone(pin,g4);
+  delay(beat16);
+  noTone(pin);
+
+  tone(pin,g4);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,g4);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,d5);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,c5);
+  delay(beat2);
+  noTone(pin);
+
+  tone(pin,g4);
+  delay(beatd8);
+  noTone(pin);
+
+  tone(pin,g4);
+  delay(beat16);
+  noTone(pin);
+
+  tone(pin,g5);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,e5);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,c5);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,b4);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin, a4);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,f5);
+  delay(beatd8);
+  noTone(pin);
+
+  tone(pin,f5);
+  delay(beat16);
+  noTone(pin);
+
+  tone(pin,e5);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,c5);
+  delay(beat4);
+  noTone(pin),
+
+  tone(pin,d5);
+  delay(beat4);
+  noTone(pin);
+
+  tone(pin,c5);
+  delay(beatd2);
+  noTone(pin);
+  }
+ }
+}
+</pre>
 
 
 </div>
