@@ -48,15 +48,22 @@
 <img src="./hola.png">
 
 <h1>  Process </h1>
-<p> First thing, it is necessary to measure the servo motor and screws so that everything can fit perfectly and construct the pieces in Fusion 360. For this, I used callipers and a ruler. </p>
+<p> First thing I did was to measure the servo motor and screws so so that everything could fit perfectly. Then,  model the pieces I will need in Fusion 360, and then exported those as stl and opened it on Prusa Slicer, where apart from preparing them to print, I added supports everywhere. Then, I proceed to export it as a g file and send it to the 3D printer. To 3D print just the arm of the robot, which was 6 pieces, it took me around 6 hours.  </p>
 
 
-<p> Then, we will need to sketch the dimensions that we will need for each part of the robotic arm, as well as for the base where the robotic arm will be placed, and the drawers where the teabout will pick the tea bag and sugar from. Here, you will find an image with the dimensions shown. </p>
+<p> Then, I went on and start by placing the servos in the right spaces and tight it with screws to the piece as hard as i could to make the robotic arm stable and functional. (this is actually realli important, because when running the code it can move really weird).  </p>
 
 
-<p> Afterwards, we will export those sketches in Fusion 3D as stl, and open in Prusa Slicer. For some pieces, it will be needed to add supports. Then, we will export as g file and 3D print the. If you dont want to use Fusion 360 at all, here you will find the files in stl with the pieces to directly put them in Prusa Slider. </p>
+<p> Afterwards, I connected each servo to the breadboard, as there wasn't an arduino shield ( which would have looked much neat in terms of wires). So, I then connected to pins 11, 10, 9, 6,3 and proceed to callibrate the servo motor so that they could be all at 90 degrees. For this, I had to run the program for each servo motor, and then remove the piece attach to eat and move it to 90 degrees. I then did the same with all the servos except with the tongs. For this one, I placed the wheel on the last two teeths of the tong and callibrate it with an initial position of 180. </p>
 
-<p> Then, we will go ahead and start building the robotic arm. For that,  </p>
+<p> Once all the servos were pretty much callibrated, I went ahead and start coding the code. it took me apporximately one week and a half as I had to make sure that the angles of each of the parts of the robotic arm were adjust correctly so that it was able to pick up the tea and sugars from the drawers. Here is the code.  </p>
+
+
+<p> Once all the servos were pretty much callibrated, I went ahead and start coding the code. it took me apporximately one week and a half as I had to make sure that the angles of each of the parts of the robotic arm were adjust correctly so that it was able to pick up the tea and sugars from the drawers. Here is the code.  </p>
+
+<p> For the code. I started by declaring the initail value position of each of the servos and on void setup its respective pins. </p>
+
+
 
 
 
