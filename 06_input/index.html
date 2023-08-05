@@ -108,11 +108,51 @@ void loop() {
 
 <h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> "Assignment #2 Capacitive Sensor  " </h1>
 
-<p> I decided to make a touch sensor using a Capacitive Sensor. </p>
+
+<h1> Introduction </h1>
+<p> I decided to do a Capactivie sensor using copper and TX-RX sensing.  </p>
 
 
+<h1> The process </h1>
+<P>  For this, I connected alligator clips to the two tape pieces of copper, and hooked them to other wires that were plugged into the arduino board, with a pin to write on and and a  pin to read from. I decided to measure the amount of water in a cup. For that, I taped the piece of copper into the outsides of the cup and started to take measurements after drinking a certain amount of water.   </P>
+
+<p> Once i had this done, I proceed to do the code. Luckily, the ARDUINO IDE program was able to provide me with the code, and so I used it!!!!!! </p>
+
+<p><pre>
+
+int analog_pin = A3;
+int tx_pin = 4;
+int read_high;
+int read_low;
+int diff; 
+
+void setup() {
+    pinMode(tx_pin, OUTPUT);      // Pin 4 provides the voltage step
+    Serial.begin(9600);
+}
+
+void loop() {
+    digitalWrite(tx_pin,HIGH);           // Step the voltage high on conductor 1.
+    read_high = analogRead(analog_pin);  // Measure response of conductor 2.
+    delayMicroseconds(100);              // Delay to reach steady state.
+    digitalWrite(tx_pin,LOW);            // Step the voltage to zero on conductor 1.
+    read_low = analogRead(analog_pin);   // Measure response of conductor 2.
+    diff = read_high - read_low;         // desired answer is the difference between high and low.
+    Serial.println(diff);
+}
+
+</p>
+</pre>
 
 
+<h1> Testing + Results </h1>
+<p> To test the functioning of my capacitve sensor, I used different percentages of the water in the cup that I drunk, which were 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%,90%, 100%. The results of this test were much higher regarding to the capacitive reading, but still the line went down despite the values. 
+
+ For this, I had to get a thermometer to ensure that the temperature was accurate. I also had to boil the water and get it from dinning hall.  Then, submerged the thermistor into the different cups and record the thermistor reading sin the form of resistance (ohms). It took me a lot of tiume to obtain the datas as wanted to ensure that thr measurement were accurated. The first table its just showcasing the correclation analysis between the capacitive reading in relationship to the percentage of water drank.The table provides with an accurate representation of the capacitive sensor values at the different percentage of the water in the cup that I drank. For a better representation, I plotted the graph where the x axis is capacitive sensor values, and the y axis the percentage of water in the cup that I drank.  As it can be appreciate, as the percentage of water level increases from 10 to 100, the capacitive sensor reading decreases. It begins with a value of 23,000, and goes all the way to 17,000.  </p>
+
+<img src="./seis.png">
+<img src="./tabla.png">
+<img src="./gara.png">
 
 
 
