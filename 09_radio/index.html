@@ -38,7 +38,95 @@
 <h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> Assignment</h1>
 <p> For this weeks assignment we had to control a microcontroller remotely, using WiFi or radio. </p>
 
-<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> CNC Milling</h1>
+<h1 style=" background-color: #b8a07e;color: whitesmoke; width: 200%; height: 4%; "> Controlling LED through WiFi</h1>
+<p>Honestly, this project really excited me, and so for that I decided to wire up LED lights to be able to control it remotely.</p>
+
+<h1> Materials Used </h1>
+<p> ESP32 Development Board ( in my case, but there are multiple other to choose from.) </p>
+<p> USB cable </p>
+<p> Breadboard </p>
+<p> Jumper Wires</p>
+<p> LED</p>
+<p> WiFi router</p>
+<p> Arduino IDE</p>
+<p> Firebase</p>
+
+<h1> Process <h1>
+
+<h1> Setting up the circuit  </h1>
+<p> Ok, so I start this assignment by wiring up the actuator i wanted to control remotely via WifI. In my case, I chosed to use and LED that I wired to the breadboard and connected the negative leg to GND.  </p>
+
+<p> Then, I imported the wifi library that was given to me when install the esp32 board package. Here its where I wrote the name of the network I was using and the password.  </p>
+<p> <pre>
+
+#include                                  // esp32 library
+        #include                         // firebase library
+    
+        #define FIREBASE_HOST "https://ps70-9ea9b-default-rtdb.firebaseio.com/"  // the project name address from firebase id
+        #define FIREBASE_AUTH "AIzaSyBpQjnQx9SrGvftElVU_woY8XIwSfPAGhs"                                // the secret key generated from firebase
+        #define WIFI_SSID "MAKERSPACE"                                    // input your home or public wifi name
+        #define WIFI_PASSWORD "12345678"                                // password of wifi ssid
+    
+        String fireString = "";                                          // led status received from firebase
+        int ledpin = ;
+    
+        //Define FirebaseESP32 data object
+        FirebaseData firebaseData;
+    
+        void setup() {
+          Serial.begin(115200);
+          delay(1000);
+          pinMode(ledpin, OUTPUT);
+          WiFi.begin(WIFI_SSID, WIFI_PASSWORD);                          // try to connect with wifi
+    
+          Serial.print("Connecting to ");
+          Serial.print(WIFI_SSID);
+          while (WiFi.status() != WL_CONNECTED) {
+            Serial.print(".");
+            delay(500);
+          }
+    
+          Serial.println();
+          Serial.print("Connected to ");
+          Serial.println(WIFI_SSID);
+          Serial.print("IP Address is : ");
+          Serial.println(WiFi.localIP());                                // print local IP address
+          Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);                  // connect to firebase
+          Firebase.reconnectWiFi(true);
+          Firebase.set(firebaseData, "/LED_STATUS", "OFF");              // set initial string of "OFF"
+        }
+    
+        void loop() {
+    
+          Firebase.get(firebaseData, "/LED_STATUS");                     // get led status input from firebase
+          fireString = firebaseData.stringData();                        // change to e.g. intData() or boolData()
+          Serial.println(fireString);
+    
+          if (fireString == "ON") {                    // compare the input of led status received from firebase
+            Serial.println("Led Turned ON");
+            digitalWrite(ledpin, HIGH);                // make output led ON
+          }
+    
+          else if (fireString == "OFF") {              // compare the input of led status received from firebase
+            Serial.println("Led Turned OFF");
+            digitalWrite(ledpin, LOW);                 // make output led OFF
+          }
+    
+          else {
+            Serial.println("Please send ON/OFF");
+          }
+    
+          delay(1000);                                 // not strictly necessary
+        }
+
+</pre>
+
+</p>
+
+
+
+<p> Afterwards, i got the IP adress of my ESP32 board and proceed to use firebase in realtime dtabase to be able to turn on and off the LED. Here is the video. </p>
+
 
 
 </div>
