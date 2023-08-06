@@ -54,13 +54,13 @@
 
 <h1> Building Procedure  </h1>
 
-<p>  I started by doing the body in the form of a cylinder, and then continue on to create the holder and eventually the screw. My screw driver was 5.5mmm. Below, I have attached a picture of how it is simmulated.
+<p>  The first thing I did was to use the lassercut kerf to cut the pieces of my fan, but for this I first had to model them in Fusion 360. I made the model separetely, the base/tower and blades. Then, once I had this, I began to assemble the pieces. I paste the components of the base with hot glue, and the tower was press fit. I would definetely say that mantaining the tower steady, and at the same time holding weight (the motor), was hard, and had to lasercut the tower several times to make the pieces fit perfectly, and ensure its safety. In addition, I model and cut the blades and put them together. For this, I cutted a wood circle and used the electric screwdriver to make a hole so that I could then placr the motor inside and be able to produce the complete 360 degree movement of the fan. 
  </p>
 
 
 <h1> Final Product </h1>
 
-<p> This is the final result of the pieces assembled. I would definetely say it took me around -5min to print my pieces. The wheels definetely proceeded to come the way that I expected and perfectly fit into each other on the second try! </p>
+<p> This is the final result of my fan. Here is the <a href="https://drive.google.com/file/d/1uBmppez4lfbHEowDSprddLMXu4Kd5Bwb/view">video </a> of the fan in action. I was able to use it perfectly, but maybe next time I should make the blades different to better spin.</p>
 
 <img src="./no.png">
 
@@ -68,10 +68,42 @@
 
 <h1 style=" background-color: #b8a07e;color: whitesmoke; width: 220%; height: 3%;"> The Code Used to Spin Fan </h1>
 
-<p> This is how I build my circuit and the code I used (from PHYS S-12 class website).
+<p> This is how I build my circuit and the code I used. First thing I did was to set the wires in its right place, and connect it to the motor. Then, started to code. For this, I started by specifying the pins as outputs and inside the function void loop, I adjust the timings so that it could be able to spin clockwise for 4 seconds, and the conuterclockwise for 0.4 seconds.  </p>
+<p><pre>
+void setup() {
+  pinMode(A1A, OUTPUT);    
+  pinMode(A1B, OUTPUT);
+  digitalWrite(A1A, LOW);   
+  digitalWrite(A1B, LOW);
+  pinMode(3, OUTPUT);
+  
+
+
+  void loop() {
+
+  digitalWrite(A1A, HIGH);
+  digitalWrite(A1B, LOW);
+  delay(4000);              
+
+  digitalWrite(A1A, LOW);  
+  digitalWrite(A1B, LOW);
+  delay(0400);              
+
+  
+  digitalWrite(A1A, LOW);  
+  digitalWrite(A1B, HIGH);
+  delay(4000);              
+
+  digitalWrite(A1A, LOW);   
+  digitalWrite(A1B, LOW);
+  delay(0400);
+
+
+</pre>
+
+</p>
 
 <img src="./yoba.png">
-<a href="https://drive.google.com/file/d/1uBmppez4lfbHEowDSprddLMXu4Kd5Bwb/view"> Video of kinetic Structure moving here </a>
 
 
 </div>
